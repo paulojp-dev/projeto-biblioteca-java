@@ -2,9 +2,15 @@
 
 Software para biblioteca em java, simples. O sistema contém somente as funcionalidades básicas, desenvolvido a fim de obter nota para a matéria de Programação OO do 3ª período de Análise e Desenvolvimento de Sistemas.
 
+----
+
 **Author:** João Paulo Ferreira da Silva (PauloJP)
 
 **Data:** 06/2015
+
+----
+
+
 
 ## Modelagem
 <img src="https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/modelagem.png" width="460" />
