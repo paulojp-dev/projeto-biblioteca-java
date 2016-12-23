@@ -8,9 +8,11 @@ Software para biblioteca em java, simples. O sistema contém somente as funciona
 
 **Data:** 06/2015
 
+#### Foi usado:
+- **Netbeans** como IDE
+- **Java 7**
+
 ----
-
-
 
 ## Modelagem
 <img src="https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/modelagem.png" width="460" />
