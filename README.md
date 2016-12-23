@@ -7,5 +7,6 @@ Software para biblioteca em java, simples. O sistema contém somente as funciona
 **Data:** 06/2015
 
 ## Modelagem
+https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/modelagem.png
 
 ## Telas
