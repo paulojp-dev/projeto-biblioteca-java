@@ -7,6 +7,20 @@ Software para biblioteca em java, simples. O sistema contém somente as funciona
 **Data:** 06/2015
 
 ## Modelagem
-https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/modelagem.png
+<img src="https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/modelagem.png" width="460" />
 
 ## Telas
+### Tela Inicial
+<img src="https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/tela-inicial.png" width="460" />
+
+### Tela Edição de Clientes
+<img src="https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/tela-clientes.png" width="460" />
+
+### Tela Edição de Livros
+<img src="https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/tela-livros.png" width="460" />
+
+### Tela Edição de Empréstimos
+<img src="https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/tela-emprestimos.png" width="460" />
+
+### Tela Edição de Multas
+<img src="https://raw.githubusercontent.com/paulojp-dev/projeto-biblioteca-java/master/imagens/tela-multas.png" width="460" />
