@@ -14,11 +14,11 @@ public class Livro {
     private int id;
     private String exemplar;
     private String autor;
-    private byte edicao;
+    private int edicao;
     private short ano;
     private String disponibilidade;
 
-    public Livro(int id, String exemplar, String autor, byte edicao, short ano, String disponibilidade) {
+    public Livro(int id, String exemplar, String autor, int edicao, short ano, String disponibilidade) {
         this.id = id;
         this.exemplar = exemplar;
         this.autor = autor;
@@ -54,11 +54,11 @@ public class Livro {
         this.autor = autor;
     }
 
-    public byte getEdicao() {
+    public int getEdicao() {
         return edicao;
     }
 
-    public void setEdicao(byte edicao) {
+    public void setEdicao(int edicao) {
         this.edicao = edicao;
     }
 

@@ -386,7 +386,7 @@ public class JFLivro extends javax.swing.JFrame {
 
                     l.setExemplar(jT1Exemplar.getText());
                     l.setAutor(jT2Autor.getText());
-                    l.setEdicao(Byte.valueOf(jT3Edicao.getText()));
+                    l.setEdicao(Integer.valueOf(jT3Edicao.getText()));
                     l.setAno(Short.valueOf(jT4Ano.getText()));
                     l.setDisponibilidade(jT5Status.getText());                  
 
@@ -399,7 +399,7 @@ public class JFLivro extends javax.swing.JFrame {
                     desabilitaCampos();
 
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao cadastrar dados.");
+                    JOptionPane.showMessageDialog(rootPane, ex.getMessage());
                 }
             }
         } else {
