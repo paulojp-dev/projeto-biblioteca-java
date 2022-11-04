@@ -472,11 +472,16 @@ public class JFMulta extends javax.swing.JFrame {
     
     // Método p/ validação do formulário
     private boolean verificaDados() {
-        if ((!jT1IdCliente.getText().equals("")) && (!jT3Valor.getText().equals(""))) {
-            return true;
+        if(jT1IdCliente.getText() == null || jT1IdCliente.getText().isEmpty() || jT1IdCliente.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O cliente não pode ser vazio");
+            return false;
         }
-        JOptionPane.showMessageDialog(rootPane, "Dados imcompletos.");
-        return false;
+        if(jT3Valor.getText() == null || jT3Valor.getText().isEmpty() || jT3Valor.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O valor não pode ser vazio");
+            return false;
+        }
+
+        return true;
     }
     /* <-CADASTRO---- */ 
 

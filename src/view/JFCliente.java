@@ -62,9 +62,9 @@ public class JFCliente extends javax.swing.JFrame {
         jT1Nome = new javax.swing.JTextField();
         jT2DataAno = new javax.swing.JTextField();
         jT3Sexo = new javax.swing.JTextField();
-        jT4Cpf = new javax.swing.JTextField();
+        jT4Cpf = new javax.swing.JFormattedTextField(new javax.swing.text.MaskFormatter("###.###.###-##"));
         jT5Endereco = new javax.swing.JTextField();
-        jT6Fone = new javax.swing.JTextField();
+        jT6Fone = new javax.swing.JFormattedTextField(new javax.swing.text.MaskFormatter("(##) #####-####"));
         jT0Id = new javax.swing.JTextField();
         jT2DataDia = new javax.swing.JTextField();
         jT2DataMes = new javax.swing.JTextField();
@@ -451,13 +451,41 @@ public class JFCliente extends javax.swing.JFrame {
     
     // Método p/ validação do formulário
     private boolean verificaDados() {
-        if ((!jT1Nome.getText().equals("")) && (!jT2DataAno.getText().equals("")) 
-                && (!jT3Sexo.getText().equals("")) && (!jT4Cpf.getText().equals(""))
-                && (!jT5Endereco.getText().equals(""))) {            
-            return true;
+
+        if(jT1Nome.getText() == null || jT1Nome.getText().isEmpty() || jT1Nome.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O Nome não pode estar vazio.");
+            return false;
         }
-        JOptionPane.showMessageDialog(rootPane, "Dados imcompletos.");
-        return false;
+        if(jT3Sexo.getText() == null || jT3Sexo.getText().isEmpty() || jT3Sexo.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O Sexo não pode estar vazio.");
+            return false;
+        }
+        if(jT5Endereco.getText() == null || jT5Endereco.getText().isEmpty() || jT5Endereco.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O Endereço não pode estar vazio.");
+            return false;
+        }
+        if(jT6Fone.getText() == null || jT6Fone.getText().isEmpty() || jT6Fone.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O Telefone não pode estar vazio.");
+            return false;
+        }
+        if(jT4Cpf.getText() == null || jT4Cpf.getText().isEmpty() || jT4Cpf.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O CPF não pode estar vazio.");
+            return false;
+        }
+        if(jT2DataAno.getText() == null || jT2DataAno.getText().isEmpty() || jT2DataAno.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "A data precisa ser preenchida completamente.");
+            return false;
+        }
+        if(jT2DataMes.getText() == null || jT2DataMes.getText().isEmpty() || jT2DataMes.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "A data precisa ser preenchida completamente.");
+            return false;
+        }  
+        if(jT2DataDia.getText() == null || jT2DataDia.getText().isEmpty() || jT2DataDia.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "A data precisa ser preenchida completamente.");
+            return false;
+        }      
+        
+        return true;
     }
     
     // Método p/ concatenar a data
@@ -568,24 +596,28 @@ public class JFCliente extends javax.swing.JFrame {
                     "Confirmação!", JOptionPane.YES_NO_OPTION);
 
             // Se a confirmação for SIM
-            if (resp == JOptionPane.YES_NO_OPTION) {                
-                Cliente c = new Cliente();
-                BdCliente d = new BdCliente();
-                
-                c.setId(Integer.valueOf(jT0Id.getText()));
-                c.setNome(jT1Nome.getText());
-                c.setDataNasc(jT2DataAno.getText());
-                c.setSexo(jT3Sexo.getText());
-                c.setCpf(jT4Cpf.getText());                
-                c.setEndereco(jT5Endereco.getText());
-                c.setFone(jT6Fone.getText());         
-
-                d.altera(c);
-                
-                JOptionPane.showMessageDialog(rootPane, "Registro alterado com sucesso.");
-                limpaCampos();
-                desabilitaCampos();
-                listaContatos();
+            if (resp == JOptionPane.YES_NO_OPTION) {     
+                if(verificaDados()) {           
+                    Cliente c = new Cliente();
+                    BdCliente d = new BdCliente();
+                    try {           
+                        c.setId(Integer.valueOf(jT0Id.getText()));
+                        c.setNome(jT1Nome.getText());
+                        c.setDataNasc(jT2DataAno.getText());
+                        c.setSexo(jT3Sexo.getText());
+                        c.setCpf(jT4Cpf.getText());                
+                        c.setEndereco(jT5Endereco.getText());
+                        c.setFone(jT6Fone.getText());       
+                        d.altera(c);
+                        JOptionPane.showMessageDialog(rootPane, "Registro alterado com sucesso.");
+                        limpaCampos();
+                        desabilitaCampos();
+                        listaContatos();
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(rootPane, "Erro ao alterar o registro.");
+                        System.out.println("Erro ao alterar o registro: " + e);
+                    }
+                }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Registro não selecionado.");

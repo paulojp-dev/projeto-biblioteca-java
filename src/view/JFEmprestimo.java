@@ -581,11 +581,19 @@ public class JFEmprestimo extends javax.swing.JFrame {
     
     // Método p/ validação do formulário
     private boolean verificaDados() {
-        if ((!jT1IdCliente.getText().equals("")) && (!jT2IdLivro.getText().equals("")) 
-                && (!jT3DataEmprestimo.getText().equals(""))) {
-            return true;
+
+        if(jT1IdCliente.getText() == null || jT1IdCliente.getText().isEmpty() || jT1IdCliente.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O Id do cliente não pode ser vazio.");
+            return false;
         }
-        JOptionPane.showMessageDialog(rootPane, "Dados imcompletos.");
+        if(jT2IdLivro.getText() == null || jT2IdLivro.getText().isEmpty() || jT2IdLivro.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O Id do livro não pode ser vazio.");
+            return false;
+        }
+        if(jT3DataEmprestimo.getText() == null || jT3DataEmprestimo.getText().isEmpty() || jT3DataEmprestimo.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "A data de emprestimo não pode ser vazia.");
+            return false;
+        }
         return false;
     }
     
