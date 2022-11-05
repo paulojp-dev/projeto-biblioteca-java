@@ -19,7 +19,7 @@ public class CriaConexao {
         
         try {
             System.out.println("Conectando ao banco de dados.");
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteca", "root", "P9544504");
+            return DriverManager.getConnection("jdbc:mysql://localhost:13306/biblioteca", "root", "root");
         } catch (SQLException e) {
             throw new SQLException(e.getMessage());
         }   

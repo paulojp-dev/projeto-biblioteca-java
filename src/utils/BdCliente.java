@@ -25,6 +25,7 @@ public class BdCliente {
     // Estabelece uma conexão
     public BdCliente() throws SQLException {       
         this.conexao = CriaConexao.getConexao();
+        System.out.println("Conectado ao banco de dados.");
     }
     /* <-CONEXÃO COM O BD---- */
     
