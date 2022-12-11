@@ -17,7 +17,7 @@ public class JMLTestes {
 
     
     public static void main(String[] args) {
-    	(new JMLTestes()).add(0);
+    	(new JMLTestes()).add(-1);
     	System.out.println("Finalizou");
     }
     
