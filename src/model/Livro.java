@@ -10,12 +10,17 @@ package model;
  * @author paulojp
  */
 public class Livro {
-    
+	//@ private invariant id >= 0;
     private int id;
+	//@ private invariant exemplar != "";
     private String exemplar;
+  //@ private invariant autor != "";
     private String autor;
+  //@ private invariant edicao > 0;
     private byte edicao;
+  //@ private invariant ano > 0 && ano <= 2022;
     private short ano;
+    //@ private invariant disponibilidade != "";
     private String disponibilidade;
 
     public Livro(int id, String exemplar, String autor, byte edicao, short ano, String disponibilidade) {
