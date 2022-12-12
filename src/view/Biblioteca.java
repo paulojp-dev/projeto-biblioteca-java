@@ -19,7 +19,7 @@ public class Biblioteca {
      * @throws java.text.ParseException
      */
     public static void main(String[] args) throws SQLException, ParseException {
-
+   
         JFPrincipal principal = new JFPrincipal();
         principal.setVisible(true);
         
