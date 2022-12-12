@@ -19,14 +19,14 @@ import model.Emprestimo;
  */
 public class BdEmprestimo {
     
-    /* ----CONEXÃO COM O BD-> */
+    /* ----CONEXÃƒO COM O BD-> */
     private Connection conexao;
     
-    // Estabelece uma conexão
+    // Estabelece uma conexÃ£o
     public BdEmprestimo() throws SQLException {       
         this.conexao = CriaConexao.getConexao();
     }
-    /* <-CONEXÃO COM O BD---- */
+    /* <-CONEXÃƒO COM O BD---- */
     
     
     
@@ -34,8 +34,10 @@ public class BdEmprestimo {
     /* ----EMPRESTIMO-> */
     
     // CREATE - Adiciona um registro
+    /*@ requires e != null;
+    @*/
     public void adicionaEmprestimo(Emprestimo e) throws SQLException {
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "INSERT INTO emprestimo(id_cliente, id_livro, data_emprestimo, data_devolucao) VALUES(?, ?, ?, ?)";       
         PreparedStatement stmt;
         // stmt recebe o comando SQL
@@ -47,15 +49,18 @@ public class BdEmprestimo {
         stmt.setString(3, e.getData_emprestimo());
         stmt.setString(4, e.getData_devolucao());
         
-        // O stmt executa o comando SQL no BD, e fecha a conexão
+        // O stmt executa o comando SQL no BD, e fecha a conexÃ£o
         stmt.execute();
         stmt.close();
         
     }
     
     // SELECT - Retorna uma lista com o resultado da consulta
+    /*@ requires id != null;
+    @ requires id != "";
+    @*/
     public List<Emprestimo> getLista(String id) throws SQLException{
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "SELECT * FROM emprestimo WHERE id_emprestimo like ?";
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         stmt.setString(1, id);
@@ -67,7 +72,7 @@ public class BdEmprestimo {
         
         // Enquanto existir registros, pega os valores do ReultSet e vai adicionando na lista
         while(rs.next()) {
-            //  A cada loop, é instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
+            //  A cada loop, Ã© instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
             Emprestimo e = new Emprestimo();
             
             // "c" -> Registro novo - .setNome recebe o campo do banco de String "nome" 
@@ -81,7 +86,7 @@ public class BdEmprestimo {
             lista.add(e);            
         }
         
-        // Fecha a conexão com o BD
+        // Fecha a conexÃ£o com o BD
         rs.close();
         stmt.close();
         
@@ -89,9 +94,12 @@ public class BdEmprestimo {
         return lista;          
     }
     
-    // SELECT - Retorna uma lista com as multas de um clientes epecífico
+    // SELECT - Retorna uma lista com as multas de um clientes epecÃ­fico
+    /*@ requires id_cliente != null;
+    @ requires id_cliente != "";
+    @*/
     public List<Emprestimo> getListaPorCliente(String id_cliente) throws SQLException{
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "SELECT emprestimo.id_emprestimo, emprestimo.id_cliente, emprestimo.id_livro, emprestimo.data_emprestimo, emprestimo.data_devolucao" +
                     " FROM emprestimo" +
                     " INNER JOIN cliente" +
@@ -107,7 +115,7 @@ public class BdEmprestimo {
         
         // Enquanto existir registros, pega os valores do ReultSet e vai adicionando na lista
         while(rs.next()) {
-            //  A cada loop, é instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
+            //  A cada loop, Ã© instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
             Emprestimo e = new Emprestimo();
             
             // "c" -> Registro novo - .setNome recebe o campo do banco de String "nome" 
@@ -121,7 +129,7 @@ public class BdEmprestimo {
             lista.add(e);            
         }
         
-        // Fecha a conexão com o BD
+        // Fecha a conexÃ£o com o BD
         rs.close();
         stmt.close();
         
@@ -130,9 +138,12 @@ public class BdEmprestimo {
     }
     
     // SELECT - Verifica se o cliente tem alguma multa
+    /*@ requires id_cliente != null;
+    @ requires id_cliente != "";
+    @*/
     public boolean verificaMultaCliente(String id_cliente) throws SQLException{
 
-// Prepara conexão p/ receber o comando SQL
+// Prepara conexÃ£o p/ receber o comando SQL
         String sql = "SELECT COUNT(multa.id_cliente) AS quantMulta" +
                         " FROM multa" +
                         " WHERE id_cliente = ?;";
@@ -147,7 +158,7 @@ public class BdEmprestimo {
         int quantMulta = 0;
         quantMulta = rs.getInt("quantMulta");
         
-        // Fecha a conexão com o BD
+        // Fecha a conexÃ£o com o BD
         rs.close();
         stmt.close();
         
@@ -159,13 +170,16 @@ public class BdEmprestimo {
     }
     
     // DELETE - Apaga registros
+    /*@ requires id != null;
+    @ requires 0 < id;
+    @*/
     public void remove(int id) throws SQLException {       
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "DELETE FROM emprestimo WHERE id_emprestimo=?";
         // stmt recebe o comando SQL
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         
-        // Seta o valor do ID p/ a condição de verificação SQL, dentro do stmt
+        // Seta o valor do ID p/ a condiÃ§Ã£o de verificaÃ§Ã£o SQL, dentro do stmt
         stmt.setInt(1, id);
         
         // Executa o codigo SQL, e fecha
