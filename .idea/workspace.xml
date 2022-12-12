@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8e882232-3f07-4cd8-ab48-e4d40a7d650f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac$JMLRacPost4Project.aj" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AspectJMLRac$JMLRacPost4Project.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac$JMLRacPost4Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AspectJMLRac$JMLRacPost4Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_model_Cliente$6e4ed71d_41ad_4cf6_8c5e_39fd8d36ea7c.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_model_Emprestimo$d2180011_8f59_433a_9cd4_e50695b8e8b9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_model_JMLTestes$a9391f4f_34f8_4b88_bbc9_402b9e6d1790.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_model_Livro$6b49e646_c249_4469_a755_3ab1c7c9b0f2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_model_Multa$4e7999b7_13de_42d7_bda4_c2e16076a191.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_utils_BdCliente$66280082_b389_4462_b031_39fd15af768a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_utils_BdEmprestimo$f9ef916c_f688_4422_85fc_d00dd21df28c.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_utils_BdLivro$0884026e_a01c_4e89_8438_0643cb2c0dc9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_utils_BdMulta$adbf2f8f_f68f_4d0f_867e_a427a161659d.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_utils_CriaConexao$69e22a7a_eba5_4060_a8ae_13b743a2a8f2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_view_Biblioteca$cdc7f64e_829c_4299_aabc_6fbc3f5ab40f.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_view_JFCliente$d6a4048c_7657_4f43_9462_05c4c83e6076.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_view_JFEmprestimo$7251571d_fb96_44ac_8341_dc6042184ee4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_view_JFLivro$27a3ac40_a4d2_4a9f_bbbb_8c9b4778fee0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_view_JFMulta$7769852a_7abc_4cf2_87ef_b5c9a1c436e6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AspectJMLRac_view_JFPrincipal$66905380_cbbb_4176_b190_afdbbd462c19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/Emprestimo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Emprestimo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/JMLTestes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/Livro.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Livro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/Multa.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Multa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/BdCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/BdCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/BdEmprestimo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/BdEmprestimo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/BdLivro.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/BdLivro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/BdMulta.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/BdMulta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/utils/CriaConexao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/utils/CriaConexao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/Biblioteca.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/Biblioteca.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFEmprestimo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFEmprestimo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFLivro.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFLivro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFMulta.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFMulta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFPrincipal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFPrincipal$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFPrincipal$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFPrincipal$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFPrincipal$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFPrincipal$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFPrincipal$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFPrincipal$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFPrincipal$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFPrincipal$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFPrincipal$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFPrincipal$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFPrincipal$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFPrincipal$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/JFPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/JFPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/mysql-connector-java-5.1.23-bin.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/JMLTestes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/BdCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/BdCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/BdLivro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/BdLivro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/CriaConexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/CriaConexao.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2InrPjramX5N9kdzGpshznB0sfx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/b321/BES/eclipse-20206/novoLAES"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e882232-3f07-4cd8-ab48-e4d40a7d650f" name="Changes" comment="" />
+      <created>1670828166035</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670828166035</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,5 +1,7 @@
 
-package model;
+package view;
+
+import model.Livro;
 
 public class JMLTestes {
     public static void main(String[] args) {

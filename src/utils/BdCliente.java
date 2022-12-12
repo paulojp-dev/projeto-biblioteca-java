@@ -20,20 +20,25 @@ import model.Cliente;
 public class BdCliente {
     
     /* ----CONEXÃO COM O BD-> */
-    private Connection conexao;
-    
-    // Estabelece uma conexão
+	/*@ spec_public @*/ private Connection conexao;
+	//@ public invariant conexao != null;
+	
+	// Estabelece uma conexão
+	/* @ assignable this.conexao;
+	 @ ensures this.conexao != null;
+	@*/
     public BdCliente() throws SQLException {       
         this.conexao = CriaConexao.getConexao();
     }
     /* <-CONEXÃO COM O BD---- */
     
     
-    
-    
     /* ----CLIENTE-> */
     
     // CREATE - Adiciona um registro
+    /*@ 	requires c != null;
+   	@ 	assignable \nothing;
+    @*/
     public void adicionaCliente(Cliente c) throws SQLException {
         // Prepara conexão p/ receber o comando SQL
         String sql = "INSERT INTO cliente(nome, data_nasc, sexo, cpf, endereco, fone)"
@@ -57,6 +62,9 @@ public class BdCliente {
     }
     
     // SELECT - Retorna uma lista com o resultado da consulta
+    /*@ assignable \nothing;
+    @ ensures \result != null;
+   @*/  
     public List<Cliente> getLista(String nome) throws SQLException{
         // Prepara conexão p/ receber o comando SQL
         String sql = "SELECT * FROM cliente WHERE nome like ?";
@@ -97,6 +105,10 @@ public class BdCliente {
     }
        
     // UPDATE - Atualiza registros
+    /*@ public normal_behavior
+   	@ 	requires c != null;
+   	@ 	assignable \nothing;
+    @*/
     public void altera(Cliente c) throws SQLException {
         // Prepara conexão p/ receber o comando SQL
         String sql = "UPDATE cliente set nome=?, data_nasc=?, sexo=?, cpf=?, endereco=?, fone=?"
@@ -119,6 +131,10 @@ public class BdCliente {
     }
     
     // DELETE - Apaga registros
+    /*@ public normal_behavior
+   	@ 	requires id >= 0;
+   	@ 	assignable \nothing;
+    @*/
     public void remove(int id) throws SQLException {       
         // Prepara conexão p/ receber o comando SQL
         String sql = "DELETE FROM cliente WHERE id_cliente=?";

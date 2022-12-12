@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="aspectjml-lib/aspectjml-release1.8.1.jar"/>
 	<classpathentry kind="lib" path="aspectjml-lib/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mysql-connector-java-8.0.30.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

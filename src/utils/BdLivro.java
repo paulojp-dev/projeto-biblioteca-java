@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Livro;
+import java.sql.Connection;
+
 
 /**
  *
@@ -20,21 +22,29 @@ import model.Livro;
 public class BdLivro {
     
     /* ----CONEXÃO COM O BD-> */
-    private Connection conexao;
-    
+	/*@ spec_public @*/ private Connection conexao;
+	//@ public invariant conexao != null;
+	
     // Estabelece uma conexão
+	/* @ assignable this.conexao;
+	 @ ensures this.conexao != null;
+	@*/
     public BdLivro() throws SQLException {       
         this.conexao = CriaConexao.getConexao();
     }
     /* <-CONEXÃO COM O BD---- */
-    
-    
-    
+   
+   
     
     /* ----LIVRO-> */
     
     // CREATE - Adiciona um registro
-    public void adicionaLivro(Livro l) throws SQLException {
+
+    /*@ public normal_behavior
+   	@ 	requires l != null;
+   	@ 	assignable \nothing;
+    @*/
+    public  /*@ pure @*/ void adicionaLivro(Livro l) throws SQLException {
         // Prepara conexão p/ receber o comando SQL
         String sql = "INSERT INTO livro(exemplar, autor, edicao, ano, disponibilidade)"
                 + "VALUES(?, ?, ?, ?, ?)";       
@@ -50,12 +60,14 @@ public class BdLivro {
         stmt.setString(5, l.getDisponibilidade());
         
         // O stmt executa o comando SQL no BD, e fecha a conexão
-        stmt.execute();
-        stmt.close();
-        
+        //stmt.execute();
+        stmt.close();    
     }
     
     // SELECT - Retorna uma lista com o resultado da consulta
+    /*@ assignable \nothing;
+     @ ensures \result != null;
+    @*/  
     public List<Livro> getLista(String exemplar) throws SQLException{
         // Prepara conexão p/ receber o comando SQL
         String sql = "SELECT * FROM livro WHERE exemplar like ?";
@@ -93,6 +105,10 @@ public class BdLivro {
     }
     
     // UPDATE - Atualiza registros
+    /*@ public normal_behavior
+   	@ 	requires l != null;
+   	@ 	assignable \nothing;
+    @*/
     public void altera(Livro l) throws SQLException {
         // Prepara conexão p/ receber o comando SQL
         String sql = "UPDATE livro set exemplar=?, autor=?, edicao=?, ano=?, disponibilidade=?"
@@ -115,6 +131,10 @@ public class BdLivro {
     }
     
     // UPDATE - Altera a disponibilidade do livro
+    /*@ public normal_behavior
+   	@ 	requires l != null && l.getId() >= 0;
+   	@ 	assignable \nothing;
+    @*/
     public void alteraDisponibilidadeLivro(Livro l) throws SQLException {
         // Prepara conexão p/ receber o comando SQL
         String sql = "UPDATE livro set disponibilidade=?"
@@ -133,6 +153,10 @@ public class BdLivro {
     }
     
     // DELETE - Apaga registros
+    /*@ public normal_behavior
+   	@ 	requires id >= 0;
+   	@ 	assignable \nothing;
+    @*/
     public void remove(int id) throws SQLException {       
         // Prepara conexão p/ receber o comando SQL
         String sql = "DELETE FROM livro WHERE id_livro=?";
