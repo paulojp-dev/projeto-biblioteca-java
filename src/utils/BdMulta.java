@@ -113,7 +113,7 @@ public class BdMulta {
         
         // Enquanto existir registros, pega os valores do ReultSet e vai adicionando na lista
         while(rs.next()) {
-            //  A cada loop, Ã© instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
+            //  A cada loop, é instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
             Multa m = new Multa();
             
             // "c" -> Registro novo - .setNome recebe o campo do banco de String "nome" 
@@ -158,7 +158,7 @@ public class BdMulta {
 
         System.out.println(totalMulta);
 
-        // Fecha a conexÃ£o com o BD
+        // Fecha a conexão com o BD
         rs.close();
         stmt.close();
 
