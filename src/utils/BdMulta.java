@@ -19,14 +19,14 @@ import model.Multa;
  */
 public class BdMulta {
     
-    /* ----CONEXÃO COM O BD-> */
+    /* ----CONEXÃƒO COM O BD-> */
     private Connection conexao;
     
-    // Estabelece uma conexão
+    // Estabelece uma conexÃ£o
     public BdMulta() throws SQLException {       
         this.conexao = CriaConexao.getConexao();
     }
-    /* <-CONEXÃO COM O BD---- */
+    /* <-CONEXÃƒO COM O BD---- */
     
     
     
@@ -34,8 +34,10 @@ public class BdMulta {
     /* ----MULTA-> */
     
     // CREATE - Adiciona um registro
+    /*@ requires m != null;
+    @*/
     public void adicionaMulta(Multa m) throws SQLException {
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "INSERT INTO multa(id_cliente, descricao, valor) VALUES(?, ?, ?)";       
         PreparedStatement stmt;
         // stmt recebe o comando SQL
@@ -46,15 +48,18 @@ public class BdMulta {
         stmt.setString(2, m.getDescricao());
         stmt.setString(3, String.valueOf(m.getValor()));
         
-        // O stmt executa o comando SQL no BD, e fecha a conexão
+        // O stmt executa o comando SQL no BD, e fecha a conexÃ£o
         stmt.execute();
         stmt.close();
         
     }
     
     // SELECT - Retorna uma lista com o resultado da consulta
+    /*@ requires id != null;
+    @ requires id != "";
+    @*/
     public List<Multa> getLista(String id) throws SQLException{
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "SELECT * FROM multa WHERE id_multa like ?";
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         stmt.setString(1, id);
@@ -66,7 +71,7 @@ public class BdMulta {
         
         // Enquanto existir registros, pega os valores do ReultSet e vai adicionando na lista
         while(rs.next()) {
-            //  A cada loop, é instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
+            //  A cada loop, Ã© instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
             Multa m = new Multa();
             
             // "c" -> Registro novo - .setNome recebe o campo do banco de String "nome" 
@@ -79,7 +84,7 @@ public class BdMulta {
             lista.add(m);            
         }
         
-        // Fecha a conexão com o BD
+        // Fecha a conexÃ£o com o BD
         rs.close();
         stmt.close();
         
@@ -88,8 +93,11 @@ public class BdMulta {
     }
     
     // SELECT - Retorna uma lista com as multas de um determinado cliente
+    /*@ requires id_cliente != null;
+    @ requires id_cliente != "";
+    @*/
     public List<Multa> getListaMultaPorCliente(String id_cliente) throws SQLException{  
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "SELECT multa.id_multa, multa.id_cliente, multa.descricao, multa.valor " +
                     "FROM multa " +
                     "INNER JOIN cliente " +
@@ -105,7 +113,7 @@ public class BdMulta {
         
         // Enquanto existir registros, pega os valores do ReultSet e vai adicionando na lista
         while(rs.next()) {
-            //  A cada loop, é instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
+            //  A cada loop, Ã© instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
             Multa m = new Multa();
             
             // "c" -> Registro novo - .setNome recebe o campo do banco de String "nome" 
@@ -118,7 +126,7 @@ public class BdMulta {
             lista.add(m);            
         }
         
-        // Fecha a conexão com o BD
+        // Fecha a conexÃ£o com o BD
         rs.close();
         stmt.close();
         
@@ -127,9 +135,14 @@ public class BdMulta {
     }
     
     // SELECT - Retorna o valor total das multas de um cliente
+    /*@ requires id_cliente != null;
+    @ requires id_cliente != "";
+    @ ensures totalMulta != null;
+    @ ensures totalMulta != "";
+    @*/
     public String totalMultaCliente(String id_cliente) throws SQLException {
         System.out.println("asdj89asduasd8asd8");
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "SELECT SUM(multa.valor) AS totalMulta FROM multa "
                 + "INNER JOIN cliente ON multa.id_cliente = cliente.id_cliente "
                 + "WHERE cliente.id_cliente = ? "
@@ -145,7 +158,7 @@ public class BdMulta {
 
         System.out.println(totalMulta);
 
-        // Fecha a conexão com o BD
+        // Fecha a conexÃ£o com o BD
         rs.close();
         stmt.close();
 
@@ -156,13 +169,16 @@ public class BdMulta {
     }
     
     // DELETE - Apaga registros
+    /*@ requires id != null;
+    @ requires 0 < id;
+    @*/
     public void remove(int id) throws SQLException {       
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "DELETE FROM multa WHERE id_multa=?";
         // stmt recebe o comando SQL
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         
-        // Seta o valor do ID p/ a condição de verificação SQL, dentro do stmt
+        // Seta o valor do ID p/ a condiÃ§Ã£o de verificaÃ§Ã£o SQL, dentro do stmt
         stmt.setInt(1, id);
         
         // Executa o codigo SQL, e fecha
@@ -171,13 +187,16 @@ public class BdMulta {
     }
     
     // DELETE - Apaga todas as multas
+    /*@ requires id != null;
+    @ requires id != "";
+    @*/
     public void removeMultas(String id) throws SQLException {       
-        // Prepara conexão p/ receber o comando SQL
+        // Prepara conexÃ£o p/ receber o comando SQL
         String sql = "DELETE FROM multa WHERE id_cliente=?";
         // stmt recebe o comando SQL
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         
-        // Seta o valor do ID p/ a condição de verificação SQL, dentro do stmt
+        // Seta o valor do ID p/ a condiÃ§Ã£o de verificaÃ§Ã£o SQL, dentro do stmt
         stmt.setString(1, id);
         
         // Executa o codigo SQL, e fecha
