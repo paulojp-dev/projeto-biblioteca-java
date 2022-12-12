@@ -16,16 +16,17 @@ import java.sql.SQLException;
 public class CriaConexao {
     
     public static Connection getConexao() throws SQLException {
-        
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Conectando ao banco de dados.");
-            //return DriverManager.getConnection("jdbc:mysql://localhost/biblioteca", "root", "");
+            //return DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteca", "root", "senhamysql");
             return DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteca?" +
-                    "user=root&password=");
+                    "user=root&password=senhamysql");
         } catch (ClassNotFoundException e) {
             throw new SQLException(e.getMessage());
-        }   
+        } catch(SQLException e) {
+        	throw new SQLException(e.getMessage());
+        }
         
     }
     
