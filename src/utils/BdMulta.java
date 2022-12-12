@@ -19,14 +19,14 @@ import model.Multa;
  */
 public class BdMulta {
     
-    /* ----CONEXÃƒO COM O BD-> */
+    /* ----CONEXÃO COM O BD-> */
     private Connection conexao;
     
-    // Estabelece uma conexÃ£o
+    // Estabelece uma conexão
     public BdMulta() throws SQLException {       
         this.conexao = CriaConexao.getConexao();
     }
-    /* <-CONEXÃƒO COM O BD---- */
+    /* <-CONEXÃO COM O BD---- */
     
     
     
@@ -37,7 +37,7 @@ public class BdMulta {
     /*@ requires m != null;
     @*/
     public void adicionaMulta(Multa m) throws SQLException {
-        // Prepara conexÃ£o p/ receber o comando SQL
+        // Prepara conexão p/ receber o comando SQL
         String sql = "INSERT INTO multa(id_cliente, descricao, valor) VALUES(?, ?, ?)";       
         PreparedStatement stmt;
         // stmt recebe o comando SQL
@@ -59,7 +59,7 @@ public class BdMulta {
     @ requires id != "";
     @*/
     public List<Multa> getLista(String id) throws SQLException{
-        // Prepara conexÃ£o p/ receber o comando SQL
+        // Prepara conexão p/ receber o comando SQL
         String sql = "SELECT * FROM multa WHERE id_multa like ?";
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         stmt.setString(1, id);
@@ -71,7 +71,7 @@ public class BdMulta {
         
         // Enquanto existir registros, pega os valores do ReultSet e vai adicionando na lista
         while(rs.next()) {
-            //  A cada loop, Ã© instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
+            //  A cada loop, é instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
             Multa m = new Multa();
             
             // "c" -> Registro novo - .setNome recebe o campo do banco de String "nome" 
@@ -84,7 +84,7 @@ public class BdMulta {
             lista.add(m);            
         }
         
-        // Fecha a conexÃ£o com o BD
+        // Fecha a conexão com o BD
         rs.close();
         stmt.close();
         
@@ -97,7 +97,7 @@ public class BdMulta {
     @ requires id_cliente != "";
     @*/
     public List<Multa> getListaMultaPorCliente(String id_cliente) throws SQLException{  
-        // Prepara conexÃ£o p/ receber o comando SQL
+        // Prepara conexão p/ receber o comando SQL
         String sql = "SELECT multa.id_multa, multa.id_cliente, multa.descricao, multa.valor " +
                     "FROM multa " +
                     "INNER JOIN cliente " +
@@ -126,7 +126,7 @@ public class BdMulta {
             lista.add(m);            
         }
         
-        // Fecha a conexÃ£o com o BD
+        // Fecha a conexão com o BD
         rs.close();
         stmt.close();
         
@@ -173,12 +173,12 @@ public class BdMulta {
     @ requires 0 < id;
     @*/
     public void remove(int id) throws SQLException {       
-        // Prepara conexÃ£o p/ receber o comando SQL
+        // Prepara conexão p/ receber o comando SQL
         String sql = "DELETE FROM multa WHERE id_multa=?";
         // stmt recebe o comando SQL
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         
-        // Seta o valor do ID p/ a condiÃ§Ã£o de verificaÃ§Ã£o SQL, dentro do stmt
+        // Seta o valor do ID p/ a condição de verificação SQL, dentro do stmt
         stmt.setInt(1, id);
         
         // Executa o codigo SQL, e fecha
@@ -191,12 +191,12 @@ public class BdMulta {
     @ requires id != "";
     @*/
     public void removeMultas(String id) throws SQLException {       
-        // Prepara conexÃ£o p/ receber o comando SQL
+        // Prepara conexão p/ receber o comando SQL
         String sql = "DELETE FROM multa WHERE id_cliente=?";
         // stmt recebe o comando SQL
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         
-        // Seta o valor do ID p/ a condiÃ§Ã£o de verificaÃ§Ã£o SQL, dentro do stmt
+        // Seta o valor do ID p/ a condição de verificação SQL, dentro do stmt
         stmt.setString(1, id);
         
         // Executa o codigo SQL, e fecha
